@@ -2,6 +2,9 @@ var availChar = []
 var password = []
 var length;
 
+var generateBtn = document.querySelector("#generate");
+
+function writePassword() {
 chooseLength()
 
 function chooseLength() {
@@ -40,27 +43,18 @@ if (confirm ("Would you like to use special characters?")) {
   }
 }
 
+function generatePassword(){
 for(var i = 0; i < length; i++){
   var randNum = (Math.floor(Math.random()*availChar.length))
   var randChar = availChar[randNum]
   password.push(randChar);
+}}
+
+generatePassword()
+
+var passwordText = document.querySelector("#password");
+
+passwordText.value = password.join("");
 }
 
-console.log(password)
-
-
-
-// // Assignment Code
-// var generateBtn = document.querySelector("#generate");
-
-// // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-
-// }
-
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);
