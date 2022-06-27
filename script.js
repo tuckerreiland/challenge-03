@@ -41,6 +41,10 @@ if (confirm ("Would you like to use special characters?")) {
   var special = ["~","!","@","#","$","%","^","&","*","(",")","_","+","|","}","{","[","]","\\",":","'","<",",",">",".","?","/","`"]  
   availChar.push(...special)
   }
+
+else {
+  alert("Please choose parameters.")
+}
 }
 
 function generatePassword(){
